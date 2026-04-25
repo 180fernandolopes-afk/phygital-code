@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phygital Code - A Lógica das Máquinas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Phygital Code 🚀</h1>
+        <p>Missão: Fale com a Máquina. Organize os blocos na ordem lógica para liberar o terminal.</p>
+    </header>
+
+    <main>
+        <section id="fase-puzzle">
+            <div class="puzzle-container">
+                <h3>Blocos de Código (Arraste para ordenar)</h3>
+                <ul id="blocos-lista">
+                    <li data-id="2" class="bloco verde">int main() { ... } <span>🔑 Onde tudo começa</span></li>
+                    <li data-id="6" class="bloco roxo">return 0; <span>🏁 Missão cumprida</span></li>
+                    <li data-id="1" class="bloco amarelo">#include &lt;stdio.h&gt; <span>📚 Manual de Instruções</span></li>
+                    <li data-id="4" class="bloco rosa">printf("Qual o nome do grupo?"); <span>📢 O computador fala</span></li>
+                    <li data-id="5" class="bloco laranja">scanf("%s", grupo); <span>👂 O computador ouve</span></li>
+                    <li data-id="3" class="bloco azul">char grupo[50]; <span>📦 Espaço para guardar nomes</span></li>
+                </ul>
+                <button id="btn-validar">Verificar Lógica</button>
+            </div>
+        </section>
+
+        <section id="fase-terminal" style="display: none;">
+            <div class="terminal">
+                <div class="terminal-header">Terminal do Sistema</div>
+                <div class="terminal-body">
+                    <p>Lógica Aprovada! Agora, digite o código completo para compilar:</p>
+                    <textarea id="codigo-input" rows="8" placeholder="// Digite o código em C aqui..."></textarea>
+                    <br>
+                    <input type="text" id="nome-grupo" placeholder="Nome do seu Grupo" autocomplete="off">
+                    <br>
+                    <button id="btn-compilar">Compilar & Executar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
