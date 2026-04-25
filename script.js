@@ -34,17 +34,28 @@ document.getElementById('btn-compilar').addEventListener('click', function() {
     const nome = document.getElementById('nome-grupo').value;
 
     if(nome === "") {
-        alert("Por favor, dê um nome ao seu grupo!");
+        alert("Por favor, deem um nome ao vosso grupo!");
         return;
     }
 
-    // Uma validação simples pra ver se eles digitaram o básico
+    // Validação simples (A senha secreta)
     if (codigo.includes("printf") && codigo.includes("scanf") && codigo.includes("main")) {
-        alert(`💥 KABUM! 💥\n\nOlá Grupo ${nome}! Seu programa rodou perfeitamente.`);
+        alert(`💥 KABUM! 💥\n\nOlá Grupo ${nome}! O vosso programa rodou perfeitamente.`);
         gerarCertificado(nome);
+        
+        // --- O GRANDE FINAL ---
+        // Esconde o terminal e mostra a tela de conclusão
+        document.getElementById('fase-terminal').style.display = 'none';
+        document.getElementById('fase-conclusao').style.display = 'block';
+        
     } else {
-        alert("Erro na compilação: O código parece incompleto ou com erros de sintaxe C.");
+        alert("⚠️ Erro na compilação: O código parece incompleto ou com erros de sintaxe C. Revejam as peças!");
     }
+});
+
+// Botão para reiniciar a missão para o próximo grupo
+document.getElementById('btn-reiniciar').addEventListener('click', function() {
+    location.reload(); // Recarrega a página voltando tudo ao zero
 });
 
 // Geração do Certificado em PDF

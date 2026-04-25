@@ -188,3 +188,35 @@ input[type="text"]::placeholder {
     margin-bottom: 0; 
     font-size: 0.95em;
 }
+
+/* Estilo da Tela Final de Conclusão */
+.conclusao-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: var(--azul-estacio);
+}
+
+.conclusao-container h2 {
+    color: #06D6A0; /* Verde escuro para indicar sucesso */
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.conclusao-container p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#btn-reiniciar {
+    background-color: #EF476F; /* Rosa chamativo para reiniciar */
+    margin-top: 20px;
+}
+
+#btn-reiniciar:hover {
+    background-color: #d83a5f;
+}
