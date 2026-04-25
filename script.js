@@ -50,20 +50,42 @@ document.getElementById('btn-compilar').addEventListener('click', function() {
 // Geração do Certificado em PDF
 function gerarCertificado(nomeGrupo) {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+    const doc = new jsPDF('l', 'mm', 'a4'); // 'l' para paisagem (landscape)
 
-    doc.setFontSize(22);
-    doc.setTextColor(0, 102, 204);
-    doc.text("CERTIFICADO DE INVENTOR", 105, 40, null, null, "center");
+    // Moldura Azul
+    doc.setDrawColor(0, 51, 153);
+    doc.setLineWidth(2);
+    doc.rect(10, 10, 277, 190);
+
+    // Título da Instituição
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(26);
+    doc.setTextColor(0, 51, 153);
+    doc.text("UNIVERSIDADE ESTÁCIO", 148, 40, null, null, "center");
     
-    doc.setFontSize(16);
-    doc.setTextColor(51, 51, 51);
-    doc.text(`Certificamos que o ${nomeGrupo}`, 105, 80, null, null, "center");
-    doc.text("montou e compilou seu primeiro Software Básico em C", 105, 95, null, null, "center");
+    doc.setFontSize(14);
+    doc.setTextColor(100);
+    doc.text("PROGRAMA DE EXTENSÃO UNITÁRIA - ABP", 148, 50, null, null, "center");
+
+    // Corpo do Certificado
+    doc.setFont("times", "italic");
+    doc.setFontSize(20);
+    doc.setTextColor(0, 0, 0);
+    doc.text("Certificamos que o grupo", 148, 80, null, null, "center");
     
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(30);
+    doc.text(nomeGrupo.toUpperCase(), 148, 105, null, null, "center");
+
+    doc.setFont("times", "normal");
+    doc.setFontSize(18);
+    doc.text("concluiu com êxito o desafio de Programação de Software Básico", 148, 130, null, null, "center");
+    doc.text("integrando lógica física e execução em linguagem C.", 148, 140, null, null, "center");
+
+    // Assinatura e Projeto
     doc.setFontSize(12);
-    doc.text("Projeto Phygital Code - Extensão Universitária", 105, 130, null, null, "center");
+    doc.text("__________________________", 148, 170, null, null, "center");
+    doc.text("Coordenação de Projetos - Monte Sinai", 148, 178, null, null, "center");
 
-    // Baixa o arquivo automaticamente
-    doc.save(`Certificado_${nomeGrupo}.pdf`);
+    doc.save(`Certificado_Estacio_${nomeGrupo}.pdf`);
 }
