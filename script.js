@@ -96,7 +96,7 @@ function gerarCertificado(nomeGrupo) {
     // Assinatura e Projeto
     doc.setFontSize(12);
     doc.text("__________________________", 148, 170, null, null, "center");
-    doc.text("Coordenação de Projetos - Monte Sinai", 148, 178, null, null, "center");
+    doc.text("Coordenação de Projetos - Fernando Lopes Santos", 148, 178, null, null, "center");
 
     doc.save(`Certificado_Estacio_${nomeGrupo}.pdf`);
 }
