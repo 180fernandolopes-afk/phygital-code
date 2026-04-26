@@ -76,8 +76,12 @@ function gerarCertificado(nomeGrupo) {
     
     doc.setFontSize(14);
     doc.setTextColor(100);
-    doc.text("PROGRAMA DE EXTENSÃO UNITÁRIA - ABP", 148, 50, null, null, "center");
+    doc.text("PROGRAMA DE EXTENSÃO UNIVERSITÁRIA - ABP", 148, 50, null, null, "center");
 
+    doc.setFontSize(12);
+    doc.setTextColor(100);
+    doc.text("Ciência da Computação", 148, 60, null, null, "center");
+     
     // Corpo do Certificado
     doc.setFont("times", "italic");
     doc.setFontSize(20);
